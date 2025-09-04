@@ -262,15 +262,20 @@ body {
 
 .story-stats {
     display: flex;
-    gap: 30px;
-    margin-top: 30px;
-    padding-top: 30px;
-    border-top: 1px solid rgba(187, 145, 16, 0.2);
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(187, 145, 16, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+    border: 2px solid var(--dark-goldenrod);
 }
 
 .current-stat {
     text-align: center;
-    flex: 1;
+    padding: 15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .current-stat .stat-number {
