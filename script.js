@@ -16,11 +16,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Logo circle click
-    const logoCircle = document.querySelector('.logo-circle');
-    if (logoCircle) {
-        logoCircle.addEventListener('click', function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Mobile menu toggle
+    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (mobileMenuToggle && navMenu) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
         });
     }
 });
@@ -73,7 +85,7 @@ const observer = new IntersectionObserver(function(entries) {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', function() {
-    const animatedElements = document.querySelectorAll('.portfolio-item, .stat-large, .stat-small');
+    const animatedElements = document.querySelectorAll('.story-img, .current-stat, .record-large, .record-small');
     
     animatedElements.forEach(el => {
         el.style.opacity = '0';
